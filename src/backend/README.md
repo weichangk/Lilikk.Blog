@@ -18,7 +18,7 @@
 - 重新发布，每次发布前需要删除现有的容器和镜像
 
 ## 自动部署
-在 `/home/code/` 目录下部署脚本 `blog.api.sh`，进入目录对脚本设置权限 `chmod 777 blog.api.sh`，执行 `blog.api.sh`
+在 `/home/code/` 目录下部署脚本 `blog.admin.api.sh`，进入目录对脚本设置权限 `chmod 777 blog.api.sh`，执行 `blog.admin.api.sh`
 
 ```bash
 #!/bin/bash
