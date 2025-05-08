@@ -1,0 +1,16 @@
+FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS base
+
+WORKDIR /app
+EXPOSE 8001
+EXPOSE 443
+
+COPY . .
+
+RUN sed -i s@/deb.debian.org/@/mirrors.163.com/@g /etc/apt/sources.list.d/debian.sources
+RUN apt-get clean
+RUN apt-get update && apt-get install -y fontconfig
+
+ENV TZ=Asia/Shanghai
+ENV ASPNETCORE_URLS 'http://*:8001'
+
+ENTRYPOINT ["dotnet", "Easy.Admin.Web.Entry.dll"]
